@@ -1,0 +1,36 @@
+services:
+  dashboard-remote:
+    build:
+      context: .
+      dockerfile: apps/dashboard-remote/Dockerfile
+    ports:
+      - "4171:80"
+    restart: unless-stopped
+
+  transactions-remote:
+    build:
+      context: .
+      dockerfile: apps/transactions-remote/Dockerfile
+    ports:
+      - "4172:80"
+    restart: unless-stopped
+
+  retni-shell:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET}
+      BETTER_AUTH_URL: ${BETTER_AUTH_URL:-http://localhost:3000}
+      BLOB_READ_WRITE_TOKEN: ${BLOB_READ_WRITE_TOKEN}
+      NEXT_PUBLIC_DASHBOARD_REMOTE_URL: http://localhost:4171
+      NEXT_PUBLIC_TRANSACTIONS_REMOTE_URL: http://localhost:4172
+    depends_on:
+      dashboard-remote:
+        condition: service_healthy
+      transactions-remote:
+        condition: service_healthy
+    restart: unless-stopped

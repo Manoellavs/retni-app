@@ -1,0 +1,1 @@
+import{t as e}from"./virtual_mf-exposes___mfe_internal__retni_dashboard__remoteEntry_js-BtcVnpw0.js";export{e as default};

@@ -1,0 +1,10 @@
+{
+  "latestErrorEvent": {
+    "code": "TYPE-001",
+    "message": "Failed to generate type declaration. Execute the below cmd to reproduce and fix the error. #TYPE-001\nargs: {\"cmd\":\"npx tsc --project /vercel/share/v0-project/apps/transactions-remote/node_modules/.federation/tsconfig.d7a68ccc1e0150584b5672763d2e3631.json\"}\nView the docs to see how to solve: https://module-federation.io/guide/troubleshooting/type#type-001",
+    "args": {
+      "cmd": "npx tsc --project /vercel/share/v0-project/apps/transactions-remote/node_modules/.federation/tsconfig.d7a68ccc1e0150584b5672763d2e3631.json"
+    },
+    "timestamp": 1783996392737
+  }
+}

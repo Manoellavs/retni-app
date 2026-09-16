@@ -1,0 +1,1 @@
+import{n as e,t}from"./Dashboard-CLyuNzbc.js";import{t as n}from"./client-Bm5FKdMd.js";var r=n(),i=e();function a(e,n){let a=(0,r.createRoot)(e);return a.render((0,i.jsx)(t,{...n})),()=>a.unmount()}export{a as mount};

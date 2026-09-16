@@ -1,0 +1,1 @@
+import{n as e,t}from"./assets/virtual_mf-REMOTE_ENTRY_ID___mfe_internal__retni_dashboard__remoteEntry_js-CWIR1wQ6.js";export{t as get,e as init};

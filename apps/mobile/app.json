@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "RETNI Controle Financeiro",
+    "slug": "retni-controle-financeiro",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "retni",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#16845b",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "br.com.retni.app"
+    },
+    "android": {
+      "package": "br.com.retni.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#16845b"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-image-picker",
+      "expo-document-picker"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

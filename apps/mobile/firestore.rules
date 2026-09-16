@@ -1,0 +1,30 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Cada usuario so acessa as proprias transacoes.
+    // O escopo e garantido pela combinacao entre o usuario autenticado
+    // e o campo userId gravado em cada documento.
+    match /transactions/{transactionId} {
+      allow read, delete: if isOwner(resource.data.userId);
+      allow create: if isOwner(request.resource.data.userId) && isValidTransaction();
+      allow update: if isOwner(resource.data.userId)
+        && isOwner(request.resource.data.userId)
+        && isValidTransaction();
+    }
+
+    function isOwner(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+
+    function isValidTransaction() {
+      let data = request.resource.data;
+      return data.userId is string
+        && data.type in ['deposito', 'transferencia', 'pagamento', 'saque']
+        && data.amount is number
+        && data.amount > 0
+        && data.date is string;
+    }
+  }
+}

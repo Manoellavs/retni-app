@@ -1,0 +1,1 @@
+import{t as e}from"./virtual_mf-exposes___mfe_internal__retni_transactions__remoteEntry_js-D63vqvrH.js";export{e as default};

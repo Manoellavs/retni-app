@@ -1,0 +1,10 @@
+{
+  "name": "@retni/ui",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.tsx", "./theme.css": "./src/theme.css" },
+  "scripts": { "build": "tsc --noEmit" },
+  "dependencies": { "lucide-react": "^0.564.0", "react": "^19" },
+  "devDependencies": { "@types/react": "^19", "typescript": "^5.7.3" }
+}
